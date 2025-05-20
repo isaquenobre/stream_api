@@ -43,7 +43,9 @@ public class BinaryOperatorExample {
         BinaryOperator<Integer> somar = (num1,num2) -> num1 + num2;
         
         int resultado = numeros.stream()
-                .reduce(0,(n1,n2)-> n1+n2);
+               // .reduce(0,(n1,n2)-> n1+n2); pode ser assim ou com o method reference
+               //com method reference
+                .reduce(0,Integer::sum);
         
         System.out.println("A soma dos numeros é: " + resultado);
     }
