@@ -24,12 +24,12 @@ public class PredicateExample {
         
         //entendendo a logica do codigo
         
-        List<String> palavras = Arrays.asList("java","kotlin", "python", "javascript","c","go","ruby");
+        /*List<String> palavras = Arrays.asList("java","kotlin", "python", "javascript","c","go","ruby");
         
         Predicate <String> maisDeCincoCaracteres = palavra->palavra.length()>5;
         
         palavras.stream()
-                .filter(
+                .filter(cd
                          new Predicate<String>(){
             @Override
             public boolean test(String p) {
@@ -38,6 +38,17 @@ public class PredicateExample {
             }
                          }                 
                 )
+              .forEach(System.out::println);*/
+        
+        
+        // com o lambda
+        
+        List<String> palavras = Arrays.asList("java","kotlin", "python", "javascript","c","go","ruby");
+        
+        Predicate <String> maisDeCincoCaracteres = palavra->palavra.length()>5;
+        
+        palavras.stream()
+                .filter(p -> p.length()>5)
               .forEach(System.out::println);
                 
                 
